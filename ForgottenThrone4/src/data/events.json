@@ -1,0 +1,2945 @@
+{
+  "start_game": {
+    "text": "艾尔兰王国，一个在古老传说和扭曲现实中摇曳的国度。在这里，你，第七王子雷欧，度过了你的童年。你的父亲，那位被世人歌颂为“圣剑之王”的陛下，将所有精力都投入到应对日渐蔓延的“异化”灾难中。对于你这个被遗弃的王子，他连一个多余的眼神都吝啬给予。你从出生起便被冠以“被遗忘的王子”之名，独自在城堡的角落中成长，仿佛一个透明的影子。",
+    "options": [
+      {
+        "text": "进入梦境",
+        "next_event_id": "dream_whispers",
+        "type": "event"
+      }
+    ]
+  },
+  "dream_whispers": {
+    "text": "你从一场噩梦中惊醒，心脏狂跳，冷汗浸透了你的亚麻衬衫。梦境中，一面巨大的、布满蛛网般裂痕的镜子，映照出一个与你相似但眼神扭曲的少年。他向你伸出了手，低声诱惑：“……它选择了你……雷欧……伸出手……你渴望力量……它能给你……”他的声音如同来自深渊的低语，充满了你从未感受过的强大力量，也夹杂着未知的危险。",
+    "options": [
+      {
+        "text": "无视它，猛地从梦中挣脱。你相信自己的意志足以抵抗这种诱惑。",
+        "next_event_id": "after_dream_resist",
+        "type": "event",
+        "effect": {
+          "精神": -5,
+          "抗性": 10
+        }
+      },
+      {
+        "text": "伸出手回应镜中的自己。你渴望力量，哪怕这力量来自未知，你都想抓住它。",
+        "next_event_id": "after_dream_accept",
+        "type": "event",
+        "effect": {
+          "异化": 5
+        }
+      }
+    ]
+  },
+  "after_dream_resist": {
+    "text": "你猛地坐起身，大口喘息。梦境的冰冷在你身上挥之不去。你将这场梦归结为一次普通的噩梦，但内心深处，那股被压抑的力量如同一个沉重的石块。你感到自己的精神受到了一定消耗，但同时也获得了更强的“抗性”潜质，对异化力量有了初步的防备。",
+    "options": [
+      {
+        "text": "继续你的童年生活",
+        "next_event_id": "random_event_pool",
+        "type": "event"
+      }
+    ]
+  },
+  "after_dream_accept": {
+    "text": "在梦中，你的手颤抖着，最终触碰到了镜子冰冷的表面。一股灼热的能量瞬间贯穿你的身体，仿佛亿万根针同时刺入你的血管。你感到体内沉睡已久的异化血脉被唤醒，一种前所未有的力量感在你体内流淌。你的“异化”属性因此增加了5点，但同时也带来了未知的风险。",
+    "options": [
+      {
+        "text": "继续你的童年生活",
+        "next_event_id": "random_event_pool",
+        "type": "event"
+      }
+    ]
+  },
+  "random_event_pool": {
+    "text": "你度过了平静的一天，在城堡中自由地探索。尽管孤独，但你拥有了更多机会去接触这个世界。",
+    "options": [
+      {
+        "text": "继续你的旅程",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "library_quest": {
+    "text": "你偷偷溜进城堡那座被遗忘的藏书阁。这里弥漫着尘埃和发霉书卷的气味，但对你来说，这里是唯一的庇护所。在书架的最深处，你找到了一本封面残破的古籍，名为《镜语》。它似乎被某种魔法保护着，当你触摸它时，它散发出淡淡的微光。“这本古籍……似乎不是普通的书。”你自言自语道，心中涌起一股强烈的求知欲。",
+    "options": [
+      {
+        "text": "尝试阅读古籍。你决定挑战自己，理解这本神秘的书。",
+        "type": "check",
+        "check": {
+          "attribute": "学习",
+          "value": 10
+        },
+        "success": {
+          "text": "你读懂了古籍中的一些内容，书中提到了“血脉的容器”和“双生之镜”的概念。古籍还提到了一个预言：“当镜子破裂，双生将现，命运之轮将再次转动。”你获得了关于“镜之核心”的地图碎片（模糊），学习属性增加了。",
+          "effect": {
+            "学习": 3
+          },
+          "item": "模糊的地图碎片",
+          "type": "event",
+          "eventId": "library_quest_success"
+        },
+        "fail": {
+          "text": "你无法理解古籍中晦涩的文字，只能作罢。古籍中的知识对你来说过于遥远，你只能将它放回原位，心中充满了不甘。",
+          "type": "event",
+          "eventId": "library_quest_fail"
+        }
+      }
+    ]
+  },
+  "library_quest_success": {
+    "text": "你带着那张模糊的地图碎片离开了藏书阁，心中充满了对未知的好奇。你意识到，这个世界远比你所知的要复杂得多。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "library_quest_fail": {
+    "text": "你沮丧地合上书，将它放回原位，感觉这个秘密与你无关，但内心深处，那股求知欲依然在隐隐作痛。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "guard_quest": {
+    "text": "你正在庭院中练习最基础的剑术，动作生涩而笨拙。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”他叹了口气，声音中充满了敬畏和一丝悲伤。",
+    "options": [
+      {
+        "text": "询问更多关于父亲的事。你从未真正了解过他。",
+        "type": "dialogue",
+        "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。那是一种超越凡人的力量，如同神祇降临。”",
+        "next_event_id": "guard_quest_after"
+      },
+      {
+        "text": "继续练习剑术。你决定用自己的方式来证明自己。",
+        "next_event_id": "guard_quest_continue",
+        "type": "event",
+        "effect": {
+          "力量": 2
+        }
+      }
+    ]
+  },
+  "guard_quest_after": {
+    "text": "你开始意识到，力量并非单纯的战斗能力，它也可能是沉重的负担。你对父亲的敬畏和不解又加深了几分。",
+    "options": [
+      {
+        "text": "继续你的旅程",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "guard_quest_continue": {
+    "text": "你专注于练习，感觉自己的力量有所增长。虽然你的剑术还很稚嫩，但你已经找到了属于自己的方向。",
+    "options": [
+      {
+        "text": "继续你的旅程",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "merchant_quest": {
+    "text": "你偷偷溜出城堡，来到了热闹的村庄。一个蒙面的流浪商人引起了你的注意，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。我这里有一个小东西，或许能帮助你。”商人从口袋里掏出一个雕刻着扭曲符文的木雕，它散发着微弱的光芒。",
+    "options": [
+      {
+        "text": "购买他的古物，需要5点运气。",
+        "type": "check",
+        "check": {
+          "attribute": "运气",
+          "value": 5
+        },
+        "success": {
+          "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。木雕上的符文闪烁了一下，你似乎从中看到了你母亲的故乡——一个遥远的、充满神秘色彩的东方国度。你的精神属性 +5，运气属性 +1，并解锁“远东血脉”的隐藏技能树。",
+          "effect": {
+            "精神": 5,
+            "运气": 1
+          },
+          "item": "扭曲符文木雕",
+          "type": "event",
+          "eventId": "merchant_quest_success"
+        },
+        "fail": {
+          "text": "你买到的是一块普通的石头，商人收下你的金币，笑着离开了。你感到被愚弄了，但这也让你对自己的判断力产生了怀疑。",
+          "type": "event",
+          "eventId": "merchant_quest_fail"
+        }
+      }
+    ]
+  },
+  "merchant_quest_success": {
+    "text": "你带着木雕回到了城堡，心中的好奇和对母亲故乡的向往愈发强烈。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "merchant_quest_fail": {
+    "text": "你感到被愚弄了，沮丧地回到了城堡。这次经历让你更加谨慎，不再轻易相信陌生人。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mages_quest": {
+    "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。“那股力量越来越强大了，国王陛下快压制不住了。”一位年轻法师低声说。“这是迟早的事。”另一位年长的法师叹了口气，“王后的预言正在实现。‘当镜子再次完整，王国的命运将面临两个极端：要么迎来纯粹的救赎，要么被永恒的扭曲吞噬。’我们必须在他觉醒之前找到‘镜’的真相。”",
+    "options": [
+      {
+        "text": "偷听更多细节。你感到这个预言与你有关。",
+        "type": "check",
+        "check": {
+          "attribute": "感知",
+          "value": 5
+        },
+        "success": {
+          "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+          "effect": {
+            "感知": 3
+          },
+          "type": "event",
+          "eventId": "mages_quest_success"
+        },
+        "fail": {
+          "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。你错过了更多重要的信息，但心中的疑问却越来越深。",
+          "type": "event",
+          "eventId": "mages_quest_fail"
+        }
+      }
+    ]
+  },
+  "mages_quest_success": {
+    "text": "你带着这个秘密离开了长廊，心中充满了对未来的担忧。你意识到，你不再是那个无忧无虑的王子，你的命运已经与整个王国的命运紧密相连。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mages_quest_fail": {
+    "text": "你感到被愚弄了，沮丧地回到了城堡。这次经历让你更加谨慎，不再轻易相信陌生人。",
+    "options": [
+      {
+        "text": "回到日常",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial": {
+    "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。你意识到，这可能就是预言中的“镜”的试炼。",
+    "options": [
+      {
+        "text": "触碰镜子。你决定直面体内的异化力量。",
+        "type": "check",
+        "check": {
+          "attribute": "异化",
+          "value": 15
+        },
+        "success": {
+          "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。你感到自己变得更加强大，但同时也感到一丝不安。",
+          "effect": {
+            "异化": 5
+          },
+          "type": "event",
+          "eventId": "mirror_trial_success"
+        },
+        "fail": {
+          "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。你意识到，你还没有完全掌握这股力量，它随时可能失控。",
+          "effect": {
+            "体力": -3,
+            "hp": -10
+          },
+          "type": "event",
+          "eventId": "mirror_trial_fail"
+        }
+      }
+    ]
+  },
+  "mirror_trial_success": {
+    "text": "你离开了祭坛，继续你的旅程。你感到自己变得更加强大，但也更加孤独。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial_fail": {
+    "text": "你离开了祭坛，继续你的旅程。你感到自己变得更加虚弱，但也更加坚定了。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "corrupted_wolf_quest": {
+    "text": "你在森林中遇到了一个异化狼人，它正试图袭击一个旅行商人。你意识到，这是你第一次面对异化生物。",
+    "options": [
+      {
+        "text": "帮助商人，与狼人战斗。",
+        "type": "combat",
+        "monsterId": "异化狼人",
+        "success": {
+          "text": "你成功击败了狼人，商人感激地送了你一些补给品。你感到自己变得更加强大，也更加自信。",
+          "type": "event",
+          "eventId": "corrupted_wolf_quest_success"
+        },
+        "fail": {
+          "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。你感到自己很无力，但也更加坚定了。",
+          "type": "ending",
+          "endingId": "tragedy"
+        }
+      },
+      {
+        "text": "袖手旁观。你感到自己太弱小了，无法与狼人战斗。",
+        "type": "event",
+        "eventId": "corrupted_wolf_quest_fail"
+      }
+    ]
+  },
+  "corrupted_wolf_quest_success": {
+    "text": "你离开了森林，继续你的旅程。你感到自己变得更加强大，也更加自信。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "corrupted_wolf_quest_fail": {
+    "text": "你离开了森林，继续你的旅程。你感到自己变得更加虚弱，但也更加坚定了。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "prophet_quest": {
+    "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+    "options": [
+      {
+        "text": "相信老人，向他请教。",
+        "type": "dialogue",
+        "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+        "next_event_id": "prophet_quest_success"
+      },
+      {
+        "text": "怀疑老人，独自探索。",
+        "type": "event",
+        "eventId": "prophet_quest_fail"
+      }
+    ]
+  },
+  "prophet_quest_success": {
+    "text": "你带着地图碎片离开了迷雾森林。",
+    "options": [
+      {
+        "text": "继续你的旅程",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "prophet_quest_fail": {
+    "text": "你离开了迷雾森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial_2": {
+    "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+    "options": [
+      {
+        "text": "触碰镜子。",
+        "type": "check",
+        "check": {
+          "attribute": "异化",
+          "value": 15
+        },
+        "success": {
+          "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+          "effect": {
+            "异化": 5
+          },
+          "type": "event",
+          "eventId": "mirror_trial_success_2"
+        },
+        "fail": {
+          "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+          "effect": {
+            "体力": -3,
+            "hp": -10
+          },
+          "type": "event",
+          "eventId": "mirror_trial_fail_2"
+        }
+      }
+    ]
+  },
+  "mirror_trial_success_2": {
+    "text": "你离开了祭坛，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial_fail_2": {
+    "text": "你离开了祭坛，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "wolf_quest_2": {
+    "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+    "options": [
+      {
+        "text": "帮助商人，与狼人战斗。",
+        "type": "combat",
+        "monsterId": "异化狼人",
+        "success": {
+          "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+          "type": "event",
+          "eventId": "wolf_quest_success_2"
+        },
+        "fail": {
+          "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+          "type": "ending",
+          "endingId": "tragedy"
+        }
+      },
+      {
+        "text": "袖手旁观。",
+        "type": "event",
+        "eventId": "wolf_quest_fail_2"
+      }
+    ]
+  },
+  "wolf_quest_success_2": {
+    "text": "你离开了森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "wolf_quest_fail_2": {
+    "text": "你离开了森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_quest": {
+    "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+    "options": [
+      {
+        "text": "战斗！",
+        "type": "combat",
+        "monsterId": "巢穴蜘蛛",
+        "success": {
+          "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+          "type": "event",
+          "eventId": "spider_cave_success"
+        },
+        "fail": {
+          "text": "你被怪物们围攻，最终倒在了洞穴里。",
+          "type": "ending",
+          "endingId": "forgotten_bloodline"
+        }
+      },
+      {
+        "text": "尝试潜行逃跑。",
+        "type": "check",
+        "check": {
+          "attribute": "体态",
+          "value": 30
+        },
+        "success": {
+          "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+          "type": "event",
+          "eventId": "spider_cave_success_stealth"
+        },
+        "fail": {
+          "text": "你的动作惊动了怪物，一场战斗不可避免。",
+          "type": "combat",
+          "monsterId": "巢穴蜘蛛",
+          "success": {
+            "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+            "type": "event",
+            "eventId": "spider_cave_success"
+          },
+          "fail": {
+            "text": "你被怪物们围攻，最终倒在了洞穴里。",
+            "type": "ending",
+            "endingId": "forgotten_bloodline"
+          }
+        }
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "prophet_quest": {
+    "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+    "options": [
+      {
+        "text": "相信老人，向他请教。",
+        "type": "dialogue",
+        "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+        "next_event_id": "prophet_quest_success"
+      },
+      {
+        "text": "怀疑老人，独自探索。",
+        "type": "event",
+        "eventId": "prophet_quest_fail"
+      }
+    ]
+  },
+  "prophet_quest_success": {
+    "text": "你带着地图碎片离开了迷雾森林。",
+    "options": [
+      {
+        "text": "继续你的旅程",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "prophet_quest_fail": {
+    "text": "你离开了迷雾森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial_2": {
+    "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+    "options": [
+      {
+        "text": "触碰镜子。",
+        "type": "check",
+        "check": {
+          "attribute": "异化",
+          "value": 15
+        },
+        "success": {
+          "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+          "effect": {
+            "异化": 5
+          },
+          "type": "event",
+          "eventId": "mirror_trial_success_2"
+        },
+        "fail": {
+          "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+          "effect": {
+            "体力": -3,
+            "hp": -10
+          },
+          "type": "event",
+          "eventId": "mirror_trial_fail_2"
+        }
+      }
+    ]
+  },
+  "mirror_trial_success_2": {
+    "text": "你离开了祭坛，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "mirror_trial_fail_2": {
+    "text": "你离开了祭坛，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "wolf_quest_2": {
+    "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+    "options": [
+      {
+        "text": "帮助商人，与狼人战斗。",
+        "type": "combat",
+        "monsterId": "异化狼人",
+        "success": {
+          "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+          "type": "event",
+          "eventId": "wolf_quest_success_2"
+        },
+        "fail": {
+          "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+          "type": "ending",
+          "endingId": "tragedy"
+        }
+      },
+      {
+        "text": "袖手旁观。",
+        "type": "event",
+        "eventId": "wolf_quest_fail_2"
+      }
+    ]
+  },
+  "wolf_quest_success_2": {
+    "text": "你离开了森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "wolf_quest_fail_2": {
+    "text": "你离开了森林，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_quest": {
+    "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+    "options": [
+      {
+        "text": "战斗！",
+        "type": "combat",
+        "monsterId": "巢穴蜘蛛",
+        "success": {
+          "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+          "type": "event",
+          "eventId": "spider_cave_success"
+        },
+        "fail": {
+          "text": "你被怪物们围攻，最终倒在了洞穴里。",
+          "type": "ending",
+          "endingId": "forgotten_bloodline"
+        }
+      },
+      {
+        "text": "尝试潜行逃跑。",
+        "type": "check",
+        "check": {
+          "attribute": "体态",
+          "value": 30
+        },
+        "success": {
+          "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+          "type": "event",
+          "eventId": "spider_cave_success_stealth"
+        },
+        "fail": {
+          "text": "你的动作惊动了怪物，一场战斗不可避免。",
+          "type": "combat",
+          "monsterId": "巢穴蜘蛛",
+          "success": {
+            "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+            "type": "event",
+            "eventId": "spider_cave_success"
+          },
+          "fail": {
+            "text": "你被怪物们围攻，最终倒在了洞穴里。",
+            "type": "ending",
+            "endingId": "forgotten_bloodline"
+          }
+        }
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spider_cave_success_stealth": {
+    "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "spider_cave_success": {
+    "text": "你离开了洞穴，继续你的旅程。",
+    "options": [
+      {
+        "text": "继续前进",
+        "next_event_id": null,
+        "type": "event"
+      }
+    ]
+  },
+  "eventPools": {
+    "1": [
+      {
+        "id": "library_quest",
+        "text": "你偷偷溜进城堡那座被遗忘的藏书阁。你找到了一本封面残破的古籍，名为《镜语》。",
+        "options": [
+          {
+            "text": "尝试阅读古籍。",
+            "type": "check",
+            "check": {
+              "attribute": "学习",
+              "value": 10
+            },
+            "success": {
+              "text": "你读懂了古籍中的一些内容，书中提到了“双生之镜”的传说。你的学习属性增加了。",
+              "effect": {
+                "学习": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你无法理解古籍中晦涩的文字，只能作罢。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "guard_quest",
+        "text": "你正在庭院中练习最基础的剑术。老侍卫长加西亚路过，他停下脚步，眼中闪过一丝复杂的情绪。“王子殿下，您很努力，但陛下……从未用过剑。”",
+        "options": [
+          {
+            "text": "询问更多关于父亲的事。",
+            "type": "dialogue",
+            "dialogueText": "侍卫摇了摇头，眼中充满了敬畏和恐惧：“陛下曾说过，真正的力量，来自内心。他从未需要冰冷的钢铁。据说他曾……以一人之力震慑了整个深渊。”",
+            "next_event_id": null
+          },
+          {
+            "text": "继续练习剑术。",
+            "type": "attribute",
+            "effect": {
+              "力量": 2
+            },
+            "successText": "你专注于练习，感觉自己的力量有所增长。"
+          }
+        ]
+      },
+      {
+        "id": "merchant_quest",
+        "text": "你偷偷溜出城堡，在村庄里看到了一个流浪商人，他向你兜售一些奇怪的古物。“年轻的王子，我感知到你体内有一股沉睡的力量，它渴望被唤醒。”",
+        "options": [
+          {
+            "text": "购买他的古物，需要5点运气。",
+            "type": "check",
+            "check": {
+              "attribute": "运气",
+              "value": 5
+            },
+            "success": {
+              "text": "你买到了一个精致的木雕，上面刻画着扭曲的符文，你感到它能增强你的精神。你的精神属性 +5，运气属性 +1。",
+              "effect": {
+                "精神": 5,
+                "运气": 1
+              },
+              "type": "item",
+              "item": "扭曲符文木雕",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你买到的是一个普通的石头，商人笑着离开了。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "mages_quest",
+        "text": "你躲在长廊的阴影中，偷听到两位宫廷法师的窃窃私语。他们提到了“异化血脉”的失控，以及“镜”的诅咒。",
+        "options": [
+          {
+            "text": "偷听更多细节。",
+            "type": "check",
+            "check": {
+              "attribute": "感知",
+              "value": 5
+            },
+            "success": {
+              "text": "你听到了关键信息：“王国的命运将由‘它’的选择决定，要么融合，要么毁灭。”你的感知属性增加。",
+              "effect": {
+                "感知": 3
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你发出了声音，法师们警惕地看了过来，你不得不离开。",
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "prophet_quest",
+        "text": "你进入了一片迷雾森林，一个手持古老石板的先知拦住了你的去路。他告诉你，你是血脉的继承者，并预言你将面临“镜”的试炼。",
+        "options": [
+          {
+            "text": "相信老人，向他请教。",
+            "type": "dialogue",
+            "dialogueText": "老人递给你一张地图碎片，上面标注了前往“镜之遗迹”的路线。他低声说：“寻找石碑，那里有你血脉的真相。记住，异化本身不是邪恶，只是没有方向的力量。”",
+            "next_event_id": null
+          },
+          {
+            "text": "怀疑老人，独自探索。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "mirror_trial_2",
+        "text": "你在一处废弃的祭坛前，发现了一面破碎的镜子。镜子中映出了一个扭曲的影子，它向你伸出了手，你感到体内的异化血脉开始躁动。",
+        "options": [
+          {
+            "text": "触碰镜子。",
+            "type": "check",
+            "check": {
+              "attribute": "异化",
+              "value": 15
+            },
+            "success": {
+              "text": "你成功驾驭了这股力量，镜子中溢出的能量融入了你的身体，你的异化属性增加。",
+              "effect": {
+                "异化": 5
+              },
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你被镜子中的力量反噬，感到一阵剧痛，你的体力受到了影响。",
+              "effect": {
+                "体力": -3,
+                "hp": -10
+              },
+              "type": "event",
+              "eventId": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "wolf_quest_2",
+        "text": "你遇到了一个异化狼人，它正试图袭击一个旅行商人。",
+        "options": [
+          {
+            "text": "帮助商人，与狼人战斗。",
+            "type": "combat",
+            "monsterId": "异化狼人",
+            "success": {
+              "text": "你成功击败了狼人，商人感激地送了你一些补给品。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你没能击败狼人，商人被杀死了，你狼狈逃走。",
+              "type": "ending",
+              "endingId": "tragedy"
+            }
+          },
+          {
+            "text": "袖手旁观。",
+            "type": "event",
+            "eventId": null
+          }
+        ]
+      },
+      {
+        "id": "spider_cave_quest",
+        "text": "你进入了一个潮湿的洞穴，突然听到沙沙声，你被一群怪物包围了。领头的是一只巨大的“巢穴蜘蛛”，周围是几只小型的“异化蜥蜴”。",
+        "options": [
+          {
+            "text": "战斗！",
+            "type": "combat",
+            "monsterId": "巢穴蜘蛛",
+            "success": {
+              "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+              "type": "event",
+              "eventId": "spider_cave_success"
+            },
+            "fail": {
+              "text": "你被怪物们围攻，最终倒在了洞穴里。",
+              "type": "ending",
+              "endingId": "forgotten_bloodline"
+            }
+          },
+          {
+            "text": "尝试潜行逃跑。",
+            "type": "check",
+            "check": {
+              "attribute": "体态",
+              "value": 30
+            },
+            "success": {
+              "text": "你成功地悄无声息地溜走了，怪物们没有发现你。",
+              "type": "event",
+              "eventId": null
+            },
+            "fail": {
+              "text": "你的动作惊动了怪物，一场战斗不可避免。",
+              "type": "combat",
+              "monsterId": "巢穴蜘蛛",
+              "success": {
+                "text": "你勇敢地击败了怪物群，在洞穴深处你发现了一具骸骨，他曾是一位冒险家。",
+                "type": "event",
+                "eventId": "spider_cave_success"
+              },
+              "fail": {
+                "text": "你被怪物们围攻，最终倒在了洞穴里。",
+                "type": "ending",
+                "endingId": "forgotten_bloodline"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

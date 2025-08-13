@@ -1,0 +1,41 @@
+{
+  "扭曲符文木雕": {
+    "name": "扭曲符文木雕",
+    "type": "talisman",
+    "description": "一个刻有扭曲符文的木雕，据说能增强佩戴者的精神力。",
+    "attributeEffect": {
+      "精神": 5
+    }
+  },
+  "忠诚徽章": {
+    "name": "忠诚徽章",
+    "type": "talisman",
+    "description": "堕落骑士莱昂生前佩戴的徽章，象征着他对王国的忠诚，能增强力量和精神力。",
+    "attributeEffect": {
+      "力量": 5,
+      "精神": 5
+    }
+  },
+  "深渊符文": {
+    "name": "深渊符文",
+    "type": "talisman",
+    "description": "深渊守望者卡西乌斯赠予的符文，可以抵御异化，但会排斥异化力量。",
+    "attributeEffect": {
+      "抗性": 10,
+      "异化": -5
+    }
+  },
+  "流血短剑": {
+    "name": "流血短剑",
+    "type": "weapon",
+    "description": "异化狼人掉落的短剑，带有强大的流血效果。",
+    "attributeEffect": {
+      "力量": 5
+    }
+  },
+  "healing_potion": {
+    "name": "治疗药水",
+    "description": "恢复生命值的普通药水。",
+    "type": "potion"
+  }
+}
